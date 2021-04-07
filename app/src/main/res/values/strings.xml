@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="user_list">Список пользователей</string>
+    <string name="current_user">Выбранный пользователь</string>
+    <string name="about">О программе</string>
+    <string name="about_text">Тестовое задание для RentaTeam</string>
+</resources>
