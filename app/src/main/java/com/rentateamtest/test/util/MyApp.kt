@@ -1,14 +1,26 @@
 package com.rentateamtest.test.util
 
-import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import androidx.multidex.MultiDexApplication
+import com.rentateamtest.test.di.components.AppComponent
+import com.rentateamtest.test.di.components.DaggerAppComponent
+import com.rentateamtest.test.di.modules.AppModule
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 
 
-@HiltAndroidApp
-class MyApp : Application() {
+class MyApp : MultiDexApplication() {
+
 
     override fun onCreate() {
         super.onCreate()
-     
+        component = DaggerAppComponent.builder()
+            .appModule(
+                AppModule(this)
+            ).build()
+    }
+
+    companion object {
+        var component: AppComponent? = null
     }
 }

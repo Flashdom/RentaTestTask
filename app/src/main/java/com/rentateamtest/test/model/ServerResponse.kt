@@ -1,7 +1,5 @@
 package com.rentateamtest.test.model
 
-import com.rentateamtest.test.model.ServerUser
-import com.rentateamtest.test.model.Support
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

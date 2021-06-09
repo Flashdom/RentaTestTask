@@ -1,18 +1,16 @@
-package com.rentateamtest.test.di
+package com.rentateamtest.test.di.modules
 
 import android.app.Application
 import androidx.room.Room
 import com.rentateamtest.test.data.database.AppDatabase
 import com.rentateamtest.test.data.database.UserDao
+import com.rentateamtest.test.data.mappers.UsersMapper
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
-class DatabaseModule {
+class DataModule {
 
     @Provides
     @Singleton
@@ -25,4 +23,10 @@ class DatabaseModule {
     fun provideDao(db: AppDatabase): UserDao {
         return db.userDao()
     }
+
+    @Provides
+    fun provideUserMapper(): UsersMapper {
+        return UsersMapper()
+    }
+
 }
